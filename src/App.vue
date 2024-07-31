@@ -1,26 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<TreeMap
+:array="array"
+/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TreeMap from "@/components/TreeMap.vue"
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components:{TreeMap},
+  data(){
+    return{
+      array:[
+        {text:"Estados Unidos",color:"blue-500", size:50},
+        {text:"Mexico",color:"red-500",size:20},
+        {text:"Brazil",color:"green-800",size:30},
+        {text:"Russian",color:"black-800",size:25},
+      ]
+    }
   }
+  
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+
