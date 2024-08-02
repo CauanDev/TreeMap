@@ -7,16 +7,11 @@
 </template>  
 <script>
   import LoadingCircle from "./LoadingCircle.vue"
+  import array from "../services/array";
   export default {
     name: "TreeMap",
     emits: ['getDetails'],
     components:{LoadingCircle},
-    props: {
-      array: {
-        required: true,
-        type: Array
-      }
-    },
     data() {
       return {
         data: [],
@@ -24,7 +19,8 @@
         fontSize: 12,
         occupiedPositions: [],
         images: [],
-        loading:true
+        loading:true,
+        array
       };
     },
     mounted() {
@@ -44,7 +40,7 @@
 
         let x;
         let y;
-        let noSpaceAvailable = false; // Flag to check if space was available
+        let noSpaceAvailable = false;
 
         const imagePromises = this.data.map(item => this.loadImage(item.imagem));
 
@@ -93,10 +89,9 @@
       }
   },
   loadImage(url) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const img = new Image();
       img.onload = () => resolve(img);
-      img.onerror = () => reject(new Error(`Não foi possível carregar a imagem: ${url}`));
       img.src = url;
     });
   },

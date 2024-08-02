@@ -1,7 +1,6 @@
 <template>
 <div>
   <TreeMap
-    :array="array"
     :key="treeMapKey"
     @getDetails="getDetails"/>
 
@@ -40,8 +39,8 @@ export default {
     },
     saveCountry(data) {
         const country = this.array.find(obj=>obj.id === data.id)        
-        this.array[country.id].size = data.size
-        this.array[country.id].text = data.text
+        country.size = data.size
+        country.text = data.text
         alert("Atualizado com sucesso");
         this.close()
         this.treeMapKey += 1;         
