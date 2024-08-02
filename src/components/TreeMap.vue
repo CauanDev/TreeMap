@@ -1,11 +1,10 @@
 <template>
-  <LoadingCircle v-if="loading"/>
-    <div class="flex justify-center items-center h-screen bg-gray-100 flex-col">
-      <h1 class="font-extrabold text-xl">Programadores <span class="text-[#164e75]">PHP</span> a cada 10.000 Habitantes</h1>
-      <canvas id="myCanvas" width="500" height="500" class="border border-black"></canvas>
-    </div>
-</template>
-  
+<LoadingCircle v-if="loading"/>
+<div class="flex justify-center items-center h-screen bg-gray-100 flex-col">
+  <h1 class="font-extrabold text-xl">Programadores <span class="text-[#164e75]">PHP</span> a cada 10.000 Habitantes</h1>
+  <canvas id="myCanvas" width="500" height="500" class="border border-black"></canvas>
+</div>
+</template>  
 <script>
   import LoadingCircle from "./LoadingCircle.vue"
   export default {
@@ -30,7 +29,7 @@
     },
     mounted() {
       this.data = this.array;
-      this.data = this.data.sort((a, b) => b.size - a.size);
+      // this.data = this.data.sort((a, b) => b.size - a.size);
       this.loading = true
       this.draw();
       this.addMouseEvents();
@@ -84,11 +83,8 @@
               }
             }
           });
-
-          if (noSpaceAvailable) {
-            alert('Não há espaço suficiente para todas as imagens no canvas.');
-            return
-          }
+          if (noSpaceAvailable) return
+          
         }).catch(error => {
           console.error('Erro ao carregar imagens:', error);
         }).finally(() => {

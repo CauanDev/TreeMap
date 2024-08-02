@@ -37,7 +37,7 @@ let array = [
     {id:35,text:"Afeganistão", size:50, imagem:"https://geo5.net/imagens/bandeira-do-afeganistao-2000px.png"},
     {id:36,text:"Bangladesh", size:55, imagem:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/640px-Flag_of_Bangladesh.svg.png"},
     {id:37,text:"Arábia Saudita", size:55, imagem:"https://s3.static.brasilescola.uol.com.br/be/2022/10/bandeira-arabia-saudita1.jpg"}
-]
+];
 
 
 export default array;
