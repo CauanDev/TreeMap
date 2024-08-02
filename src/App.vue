@@ -3,15 +3,14 @@
     <TreeMap
       :array="array"
       :key="treeMapKey"
-      @getDetails="getDetails"
-    />
+      @getDetails="getDetails"/>
+
     <ModalCountry
       @close="close"
       @deleteCountry="deleteCountry"
       @saveCountry="saveCountry"
       :obj="obj"
-      v-if="modal"
-    />
+      v-if="modal"/>
   </div>
 </template>
 
@@ -28,7 +27,7 @@ export default {
       obj: {},
       modal: false,
       array,
-      treeMapKey: 0  // chave para forçar re-renderização
+      treeMapKey: 0  //Serve para forcar para renderizar de novo o TreeMap
     };
   },
   methods: {
@@ -40,9 +39,9 @@ export default {
       this.modal = false;
     },
     saveCountry(data) {
-     
-        this.array[data.id].size = data.size
-        this.array[data.id].text = data.text
+      const id = (data.id === 0) ? 0 : data.id - 1;
+        this.array[id].size = data.size
+        this.array[id].text = data.text
         alert("Atualizado com sucesso");
         this.close()
         this.treeMapKey += 1;         

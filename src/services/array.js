@@ -1,4 +1,4 @@
-const array = [
+let array = [
     {id:0,text:"Estados Unidos", size:250, imagem:"https://static.mundoeducacao.uol.com.br/mundoeducacao/2022/05/bandeira-estados-unidos.jpg"},
     {id:1,text:"Índia", size:120, imagem:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/280px-Flag_of_India.svg.png"},
     {id:2,text:"Brasil", size:89, imagem:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/2000px-Flag_of_Brazil.svg.png"},

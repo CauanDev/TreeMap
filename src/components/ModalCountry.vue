@@ -40,18 +40,19 @@
 <script>
 
 export default{
-    name:"ModalCountry",
-    emits: ['close','deleteCountry','saveCountry'],
-    props:{
-        obj:{
-            required:true
-        }
+  name:"ModalCountry",
+  emits: ['close','deleteCountry','saveCountry'],
+  props:{
+    obj:{required:true}
     },
     data(){
         return{
-            data:this.obj
+          data:{}
         }
     },
+    mounted(){
+      this.data = {...this.obj}
+    }
   
 }
 </script>
